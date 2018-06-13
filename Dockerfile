@@ -8,7 +8,8 @@ RUN apt-get install -q -y openssh-server
 RUN npm install -g grunt && npm install -g gulp && npm install -g rubygems
 RUN curl https://install.meteor.com/ | sh
 
-RUN useradd -d /home/xdev -ms /bin/bash -g root -G sudo -p 123456 xdev
+RUN useradd -d /home/xdev -ms /bin/bash -g root -G sudo xdev
+RUN echo 123456 | passwd xdev --stdin
 USER xdev
 WORKDIR /home/xdev
 

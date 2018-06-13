@@ -6,7 +6,7 @@ services:
      build:
        context: .
      volumes:
-       - ./condata/yourname:/xdev
+       - ./data/xdev:/xdev
      restart: unless-stopped
      command: tail -F anything
      ports:
