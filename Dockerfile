@@ -20,5 +20,5 @@ RUN echo 'alias xspace="df -h"' >> ~/.bash_aliases
 RUN /bin/bash -c "source ~/.bash_aliases"
 
 
-CMD service openssh-server start
+CMD sudo /etc/init.d/ssh start
 RUN bash
