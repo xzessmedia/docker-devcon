@@ -9,7 +9,7 @@ RUN npm install -g grunt && npm install -g gulp && npm install -g rubygems
 RUN curl https://install.meteor.com/ | sh
 
 RUN useradd -d /home/xdev -ms /bin/bash -g root -G sudo xdev
-RUN echo 123456 | passwd xdev --stdin
+RUN echo 'xdev:123456' | chpasswd
 USER xdev
 WORKDIR /home/xdev
 
