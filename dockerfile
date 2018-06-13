@@ -12,5 +12,12 @@ RUN useradd -d /home/xdev -ms /bin/bash -g root -G sudo -p 123456 xdev
 USER xdev
 WORKDIR /home/xdev
 
+RUN echo 'alias xrefresh="source ~/.bash_aliases"' >> ~/.bash_aliases
+RUN echo 'alias xwww="cd /var/www/html"' >> ~/.bash_aliases
+RUN echo 'alias xalias="sudo vi ~/.bash_aliases"' >> ~/.bash_aliases
+RUN echo 'alias xspace="df -h"' >> ~/.bash_aliases
+RUN /bin/bash -c "source ~/.bash_aliases"
+
+
 CMD service openssh-server start
 RUN bash
